@@ -24,7 +24,7 @@ function bUpdate() {
   //   // To access this use PEEK(0x5f81), or PEEK(0x5f80 + 1) this can be usefull if you are looping through memory
   // }
 
-  pico8_gpio[0] = leftM.present ? 0 : 1;
+  pico8_gpio[0] = leftM.present ? 1 : 0;
   pico8_gpio[1] = rightM.present ? 1 : 0;
   pico8_gpio[2] = shootM.present ? 1 : 0;
 
@@ -44,7 +44,7 @@ window.onload = () => {
   // Get a reference to the marker with the id 0
   shootM = Beholder.getMarker(0);
   leftM = Beholder.getMarker(1)
-  rightM = Beholder.getMarker(2);
+  rightM = Beholder.getMarker(3);
   leftM.timeout = 150
   bUpdate()
 }
